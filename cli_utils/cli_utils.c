@@ -20,7 +20,7 @@ void help(char **arguments)
 	{
 		if(strcmp(arguments[i], "--help") == 0) 
 		{
-			printf("Usage: ./ordereye-parser [options] [file] [pattern] [count] [position] [substring]\n\n");
+			printf("Usage: ./ordereye-parser [options] [file] [pattern] [count] [position] [substring] [count]\n\n");
 
 			printf("Options:\n");
 			printf("  -l       Normal mode (like grep). Prints the entire line if it contains the specified pattern.\n");
@@ -38,16 +38,16 @@ void help(char **arguments)
 
 			printf("Examples:\n");
 			printf("1. Using `-l` mode with enumeration:\n");
-			printf("   ./ordereye-parser -le test2.txt 'translation'\n\n");
+			printf("   ./ordereye-parser -le test.txt 'substring'\n\n");
 
 			printf("2. Using `-p` mode to extract after position 1 until the second occurrence of a space:\n");
-			printf("   ./ordereye-parser -pe test2.txt 1 ' ' 2\n\n");
+			printf("   ./ordereye-parser -pe test.txt 1 ' ' 2\n\n");
 
-			printf("3. Using `-s` mode to extract everything after 'translation' until the pattern 'error' appears 2 times:\n");
-			printf("   ./ordereye-parser -se test2.txt 'translation' 'error' 2\n\n");
+			printf("3. Using `-s` mode to extract everything after 'substring' until the pattern '.' appears 2 times:\n");
+			printf("   ./ordereye-parser -se test2.txt 'sustring' 1 '.' 2\n\n");
 
-			printf("4. Using `-v` with `-l` to exclude lines containing 'error':\n");
-			printf("   ./ordereye-parser -v -l test2.txt 'error'\n");
+			printf("4. Using `-v` with `-l` to exclude lines containing 'substring':\n");
+			printf("   ./ordereye-parser -l -v test2.txt 'substring'\n");
 			exit(EXIT_SUCCESS);
 		}
 	}
