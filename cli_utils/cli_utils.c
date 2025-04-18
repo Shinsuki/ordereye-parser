@@ -44,10 +44,10 @@ void help(char **arguments)
 			printf("   ./ordereye-parser -pe test.txt 1 ' ' 2\n\n");
 
 			printf("3. Using `-s` mode to extract everything after 'substring' until the pattern '.' appears 2 times:\n");
-			printf("   ./ordereye-parser -se test2.txt 'sustring' 1 '.' 2\n\n");
+			printf("   ./ordereye-parser -se test.txt 'substring' 1 '.' 2\n\n");
 
 			printf("4. Using `-v` with `-l` to exclude lines containing 'substring':\n");
-			printf("   ./ordereye-parser -l -v test2.txt 'substring'\n");
+			printf("   ./ordereye-parser -l -v test.txt 'substring'\n");
 			exit(EXIT_SUCCESS);
 		}
 	}
