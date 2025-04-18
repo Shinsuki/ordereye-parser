@@ -20,7 +20,34 @@ void help(char **arguments)
 	{
 		if(strcmp(arguments[i], "--help") == 0) 
 		{
-			printf("Usage: godeye [Options] [file]"); // Help message for usage
+			printf("Usage: ./ordereye-parser [options] [file] [pattern] [count] [position] [substring]\n\n");
+
+			printf("Options:\n");
+			printf("  -l       Normal mode (like grep). Prints the entire line if it contains the specified pattern.\n");
+			printf("  -p       Extraction mode. Extracts everything after the position until the pattern is found or after a certain number of occurrences.\n");
+			printf("  -s       Substring extraction mode. Extracts everything after the specified substring until it finds the specified pattern a given number of times.\n");
+			printf("  -v       Invert the result for `-l` mode, showing lines that do NOT contain the specified pattern.\n");
+			printf("  -e       Enable enumeration. For `-l`, `-s`, and `-p` modes, this will display the line number alongside the results.\n\n");
+
+			printf("Parameters:\n");
+			printf("  file     The file you want to process.\n");
+			printf("  pattern  The pattern or substring you want to search for.\n");
+			printf("  count    The number of occurrences of the pattern or substring to consider for `-p` and `-s` modes.\n");
+			printf("  position The starting position in the string for `-p` mode (applicable only for `-p` mode).\n");
+			printf("  substring The substring used as the delimiter for extraction (applicable to `-p` and `-s` modes).\n\n");
+
+			printf("Examples:\n");
+			printf("1. Using `-l` mode with enumeration:\n");
+			printf("   ./ordereye-parser -le test2.txt 'translation'\n\n");
+
+			printf("2. Using `-p` mode to extract after position 1 until the second occurrence of a space:\n");
+			printf("   ./ordereye-parser -pe test2.txt 1 ' ' 2\n\n");
+
+			printf("3. Using `-s` mode to extract everything after 'translation' until the pattern 'error' appears 2 times:\n");
+			printf("   ./ordereye-parser -se test2.txt 'translation' 'error' 2\n\n");
+
+			printf("4. Using `-v` with `-l` to exclude lines containing 'error':\n");
+			printf("   ./ordereye-parser -v -l test2.txt 'error'\n");
 			exit(EXIT_SUCCESS);
 		}
 	}
