@@ -2,7 +2,7 @@
 # Ordereye Parser
 ![order](https://github.com/user-attachments/assets/1619a99f-8719-4823-9ffa-e97a91dd301b)
 
-> Part of the **Ordereye** cybersecurity toolkit
+> Part of the **Ordereye** cybersecurity reconnaissance toolkit.
 
 **Ordereye Parser** is a powerful and lightweight CLI tool to filter, extract, and enumerate patterns from text files.
 
