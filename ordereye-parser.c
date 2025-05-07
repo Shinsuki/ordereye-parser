@@ -7,12 +7,6 @@
 
 int main (int argc, char **argv)
 {
-	if (argc < 4)
-	{
-		fprintf(stderr, "Too few arguments provided");
-		exit(EXIT_FAILURE);
-	}
-
 	shell_info shell_args;
 	find_info find;
 	substr_info substr;
@@ -26,6 +20,11 @@ int main (int argc, char **argv)
 
 	help(argv);
 	processargs(argc, argv, &shell_args);
+	if (argc < 4)
+	{
+		fprintf(stderr, "Too few arguments given");
+		exit(EXIT_FAILURE);
+	}
 	int capacity = count_lines(shell_args.file); // Get the number of lines in the file
 	
 	options_bool = checkoptions(shell_args.options, options_bool);
