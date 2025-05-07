@@ -7,6 +7,11 @@
 
 int main (int argc, char **argv)
 {
+	if (argc < 4)
+	{
+		fprintf(stderr, "Too few arguments provided");
+		exit(EXIT_FAILURE);
+	}
 
 	shell_info shell_args;
 	find_info find;
@@ -47,7 +52,7 @@ int main (int argc, char **argv)
 		// Check if the times for the substring and delimiter are valid numbers
 		if (!check_arg(shell_args.arguments[1]) || !check_arg(shell_args.arguments[3])) 
 		{
-			fprintf(stderr, "You need to put digits in the finding substring times and the delimitator char find\nTry 'godeye -- help'for more information.");
+			fprintf(stderr, "You need to put digits in the finding substring times and the delimitator char find\nTry 'ordereye-parser --help'for more information.");
 			exit(EXIT_FAILURE);
 		}
 
@@ -66,7 +71,7 @@ int main (int argc, char **argv)
 
 		if (!check_arg(shell_args.arguments[0]) || !check_arg(shell_args.arguments[2])) 
 		{
-			fprintf(stderr, "You need to put digits in the finding substring times and the delimitator char find\nTry 'godeye -- help'for more information.");
+			fprintf(stderr, "You need to put digits in the finding substring times and the delimitator char find\nTry 'ordereye-parser --help'for more information.");
 			exit(EXIT_FAILURE);
 		}
 
